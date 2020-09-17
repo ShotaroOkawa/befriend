@@ -1,0 +1,12 @@
+class CreatePosts < ActiveRecord::Migration[6.0]
+  def change
+    create_table :posts do |t|
+      t.references :user,         null: false
+      t.string     :title,        null: false
+      t.string     :category,     null: false
+      t.string     :country,      null: false
+      t.string     :description,  null: false
+      t.timestamps
+    end
+  end
+end

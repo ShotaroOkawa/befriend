@@ -1,0 +1,48 @@
+<header>
+  <div class="container">
+    <a href="#">Befriend</a>
+  </div>
+</header>
+
+<%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+  <label>Name</label>
+  <div>
+    <%= f.text_area :first_name, placeholder:"First Name", autofocus: true %>
+    <%= f.text_area :last_name, placeholder:"Last Name" %>
+  <div>
+  <label>Email</label>
+  <div>
+    <%= f.email_field :email, placeholder:"email" %>
+  <div>
+  <label>Password</label>
+  <div>
+    <%= f.password_field :password, placeholder:"password" %>
+  <div>
+  <label>Password Confirmation</label>
+  <div>
+    <%= f.password_field :password_confirmation, placeholder:"password confirmation" %>
+  <div>
+  <label>Gender</label>
+  <div>
+    <%= f.number_field :gender_id %>
+  <div>
+  <label>City</label>
+  <div>
+    <%= f.text_area :city, placeholder:"city" %>
+  <div>
+  <label>Birthday</label>
+    <%= raw sprintf(
+          f.date_select(
+            :birthday,
+            class:'select-birth',
+            id:"birth-date",
+            use_month_numbers: true,
+            prompt:'--',
+            start_year: 1930,
+            end_year: (Time.now.year - 5),
+            date_separator: '%s'),
+          "<p> year </p>", "<p> month </p>") + "<p> day </p>" %>
+  <div class='register-btn'>
+    <%= f.submit "register" %>
+  </div>
+<% end %>
