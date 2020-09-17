@@ -4,8 +4,13 @@
     <a href="#">Befriend</a>
     <nav>
       <ul>
-        <li><a href="#">Sign up</a></li>
-        <li><a href="#">Log in</a></li>
+        <% if user_signed_in? %>
+          <li><%= link_to "Username", "#" %></li>
+          <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Sign up", new_user_registration_path %></li>
+          <li><%= link_to "Log in", new_user_session_path %></li>
+        <% end %>
       </ul>
     </nav>
   </div>
