@@ -31,51 +31,20 @@
       <div class="tab-1-content-inner">
         <div class="latestpost">
           <h2>Posts</h2>
-          <div class="top-wrapper">
-            <article>
-              <a href="">
-                <figure>
-                  <img src="/assets/test.jpeg" src="">
-                </figure>
-                <h3>Test</h3>
-              </a>
-            </article>
-            <article>
-              <a href="">
-                <figure>
-                  <img src="/assets/test.jpeg" src="">
-                </figure>
-                <h3>Test</h3>
-              </a>
-            </article>
-            <article>
-              <a href="">
-                <figure>
-                  <img src="/assets/test.jpeg" src="">
-                </figure>
-                <h3>Test</h3>
-              </a>
-            </article>
-          </div>
-        </div>
-        <div class="find-by-country">
-          <h2>Find by country</h2>
-          <div class="mid-wrapper">
-            <div class="region">
-              <h3>Asia</h3>
-            </div>
-            <div class="country">
-              <ul>
-                <li><a href="">Japan</li>
-                <li><a href="">Korea</li>
-                <li><a href="">China</li>
-                <li><a href="">India</li>
-              </ul>
-            </div>
-          </div>         
+          <ul>
+          <% @posts.each do |post| %>
+            <li>
+              <%= link_to post_path(post.id) do %>
+                <%= image_tag post.image %>
+                <%= post.title %>
+              <% end %>
+            </li>
+          <% end %>
+          </ul>
         </div>
       </div>
     </div>  
+
 
 
 
