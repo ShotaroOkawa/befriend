@@ -1,0 +1,16 @@
+<%= render "shared/header"%>
+<%= form_with model:@post, local: true do |f| %>
+
+<label>image</label>
+<div><%= f.file_field :image %></div>
+<label>title</label>
+<div><%= f.text_field :title %></div>
+<label>Category</label>
+<div><%= f.text_field :category %></div>
+<label>country</label>
+<div><%= f.text_field :country %></div>
+<label>description</label>
+<div><%= f.text_field :description %></div>
+<div><%= f.submit "Post" %></div>
+
+<% end %>
