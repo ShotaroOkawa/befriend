@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2020_09_19_014118) do
     t.bigint "user_id", null: false
     t.string "title", default: "", null: false
     t.string "category", default: "", null: false
-    t.string "country", default: "", null: false
+    t.integer "country_id", null: false
     t.string "description", default: "", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

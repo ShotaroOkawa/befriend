@@ -29,7 +29,7 @@
 | user          | references | null: false, foreign_key: true |
 | title         | string     | null: false                    |
 | category      | string     | null: false                    |
-| country       | string     | null: false                    |
+| country_id    | integer    | null: false                    |
 | description   | string     | null: false                    |
 | image         | -          | Active Storage                 |
 
