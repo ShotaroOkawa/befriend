@@ -15,12 +15,14 @@
 
 ### Association
 
-- has_many :posts
+- has_many :articles
+- has_many :questions
+- has_many :answers
 - has_many :events, through: :user_events
 - has_many :user_events
 
 
-## posts テーブル
+## articles テーブル
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
@@ -34,6 +36,34 @@
 ### Association
 
 - belongs_to :user
+
+## questions テーブル
+
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| user          | references | null: false, foreign_key: true |
+| title         | string     | null: false                    |
+| category      | string     | null: false                    |
+| country       | string     | null: false                    |
+| text          | string     | null: false                    |
+
+### Association
+
+- belongs_to :user
+- has_many :answers
+
+## answers テーブル
+
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| user          | references | null: false, foreign_key: true |
+| question      | references | null: false, foreign_key: true |
+| text          | string     | null: false                    |
+
+### Association
+
+- belongs_to :user
+- belongs_to :question
 
 
 ## events テーブル
