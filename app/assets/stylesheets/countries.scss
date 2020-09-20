@@ -1,0 +1,153 @@
+/* 全体のレイアウト */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 0;
+  color: #fff;
+}
+
+p {
+  margin: 0;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+// ショーケース
+.showcase {
+  position: relative;
+  top: 100px;
+  width: 100%;
+  height: 85vh;
+  background: url('nepal.JPG') no-repeat center center/cover;
+}
+
+.showcase-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 15rem;
+}
+
+.showcase-content h1 {
+  font-weight: bold;
+  font-size: 4rem;
+  margin: 0 0 2rem;
+  text-shadow: 1px 1px 0 #666;
+}
+
+.showcase-content p {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 2rem;
+  text-shadow: 1px 1px 0 #666;
+}
+
+// 国別
+
+.country-list {
+  position: relative;
+  padding: 3rem 1rem;
+  background: #fff;
+  color: #666666;
+}
+
+.region-name {
+  font-size: 2rem;
+  text-shadow: 1px 1px 0 #666;
+  text-align: center;
+  line-height: 200px;
+}
+.country-list ul {
+  margin: 0;
+  padding: 0;
+}
+
+.country-list .wrapper-top, .country-list .wrapper-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.country-list .wrapper-inner {
+  width: 23%;
+}
+
+.country-list .asia {
+  background: url('asia.jpg') no-repeat center center/cover;
+  border-radius: 2rem;
+}
+.country-list .europe {
+  background: url('europe.jpg') no-repeat center center/cover;
+  border-radius: 2rem;
+}
+
+.country-list .north-america {
+  background: url('north-america.jpg') no-repeat center center/cover;
+  border-radius: 2rem;
+}
+
+.country-list .south-america {
+  background: url('south-america.jpg') no-repeat center center/cover;
+  border-radius: 2rem;
+}
+
+.country-list .central-america {
+  background: url('central-america.jpg') no-repeat center center/cover;
+  border-radius: 2rem;
+}
+
+.country-list .oceania {
+  background: url('oceania.jpg') no-repeat center center/cover;
+  border-radius: 2rem;
+}
+
+.country-list .africa {
+  background: url('africa.jpg') no-repeat center center/cover;
+  border-radius: 2rem;
+}
+
+.country-list .middle-east {
+  background: url('middle-east.jpg') no-repeat center center/cover;
+  border-radius: 2rem;
+}
+
+.country-list .country-item {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 150px;
+  text-align: center;
+}
+
+.country-list .country {
+  margin: 10px 0;
+}
+
+.country-list .country li {
+  padding: 4px 0;
+}
+
+.country-list .country li a {
+  color: #666666; 
+}
+
+.country-list .country li a:hover {
+  opacity: 0.7;
+}
