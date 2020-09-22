@@ -1,0 +1,25 @@
+
+<%= @question.status.name %>
+<%= @question.title %>
+<%= @question.category.name %>
+<%= @question.country.name %>
+<%= @question.text %>
+
+<div>
+  <%= link_to "Edit question", edit_question_path(@question) %>
+</div>
+<div>
+  <%= link_to "Delete question", question_path(@question), method: :delete %>
+</div>
+
+<%= link_to "Answer to this question", new_question_answer_path(@question) %>
+
+<h2>Answers</h2>
+<ul class="answer-list">
+<% @answers.each do |answer| %>
+  <li class="answer-item">
+    <div class="text"><%= answer.text %></div>
+    <div class="user"><%= answer.user.first_name %></div>
+  </li>
+<% end %>
+</ul>
