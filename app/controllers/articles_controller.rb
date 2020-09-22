@@ -1,9 +1,4 @@
 class ArticlesController < ApplicationController
-  def index
-    @articles = Article.all
-    @europe_countries = Country.find_all_by_region "Europe"
-  end
-
   def new
     @article = Article.new
   end
@@ -46,6 +41,6 @@ class ArticlesController < ApplicationController
 
   private
   def article_params
-    params.require(:article).permit(:image, :title, :category, :country_id, :description).merge(user_id: current_user.id)
+    params.require(:article).permit(:image, :country_id, :country_id, :category_id, :title, :description).merge(user_id: current_user.id)
   end
 end

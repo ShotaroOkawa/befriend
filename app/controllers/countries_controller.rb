@@ -11,8 +11,9 @@ class CountriesController < ApplicationController
   end
 
   def show
-    @articles = Article.where(country_id: params[:id])
     @country = Country.find(params[:id])
+    @articles = Article.where(country_id: params[:id])
+    @questions = Question.where(country_id: params[:id])
   end
 
 end

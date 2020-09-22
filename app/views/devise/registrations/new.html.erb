@@ -20,7 +20,7 @@
   <div>
   <label>Gender</label>
   <div>
-    <%= f.number_field :gender_id %>
+    <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {}) %>
   <div>
   <label>City</label>
   <div>

@@ -8,7 +8,7 @@
 | last_name        | string  | null: false  |
 | email            | string  | null: false  |
 | password         | string  | null: false  |
-| gender_id        | string  | null: false  | <!-- active record -->
+| gender_id        | integer | null: false  | <!-- active record -->
 | city             | string  | null: false  |
 | birthday         | date    | null: false  |
 | language         | string  |              |
@@ -27,9 +27,9 @@
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
 | user          | references | null: false, foreign_key: true |
-| title         | string     | null: false                    |
-| category      | string     | null: false                    |
 | country_id    | integer    | null: false                    |
+| category_id   | string     | null: false                    |
+| title         | string     | null: false                    |
 | description   | string     | null: false                    |
 | image         | -          | Active Storage                 |
 
@@ -42,9 +42,9 @@
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
 | user          | references | null: false, foreign_key: true |
+| country_id    | integer    | null: false                    |
+| category_id   | integer    | null: false                    |
 | title         | string     | null: false                    |
-| category      | string     | null: false                    |
-| country       | string     | null: false                    |
 | text          | string     | null: false                    |
 
 ### Association
@@ -66,12 +66,15 @@
 - belongs_to :question
 
 
-## communities テーブル
+## events テーブル
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
 | title         | string     | null: false                    |
-| category      | string     | null: false                    |
-| country       | string     | null: false                    |
+| country_id    | string     | null: false                    |
+| category_id   | string     | null: false                    |
+| description   | string     | null: false                    |
+| date          | datetime   | null: false                    |
+| place         | string     | null: false                    |
 | description   | string     | null: false                    |
 | image         | -          | Active Storage                 |
 

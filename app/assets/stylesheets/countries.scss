@@ -30,7 +30,7 @@ ul {
 // ボタン
 .btn {
   display: inline-block;
-  background: orange;
+  background: #ff8800;
   color: #fff;
   font-size: 1rem;
   font-size: 1rem;
@@ -178,7 +178,7 @@ ul {
 //  ショーケース
 .country-showcase {
   height: 50vh;
-  background: #fc9003;
+  background: #ff8800;
 }
 .country-showcase .showcase-content {
   padding-top: 10rem;
@@ -220,7 +220,7 @@ ul {
 }
 
 .tab-border {
-  border-bottom: #fc9003 solid 4px;
+  border-bottom: #ff8800 solid 4px;
 }
 
 
@@ -234,39 +234,63 @@ ul {
 }
 
 
-// 最新の投稿
+// タブの中身
 
-.tab-content .article-list {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 0;
+.tab-1-content-inner, .tab-2-content-inner, .tab-3-content-inner {
+  padding: 48px 16px;
 }
 
-.tab-content .article-item {
-  padding-bottom: 30px;
+.tab-content ul {
+  padding: 0;
 }
 
 .tab-content div {
   color: #666666;
 }
+//タブの中身1
 
-.tab-content img {
+.tab-1-content-inner .article-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.tab-1-content-inner .article-item {
+  padding-bottom: 30px;
+}
+
+.tab-1-content-inner img {
   width: 300px;
   height: 200px;
 }
 
-.tab-1-content-inner {
-  padding: 48px 16px;
-}
-
-.article-list .title{
+.tab-1-content-inner .title{
   width: 300px;
   height: 36px;
   word-wrap: break-word;
   overflow: hidden;
 }
 
+// タブの中身2
 
+.tab-2-content-inner .status {
+  padding: 5px 10px;
+  border-radius: 2px;
+  background-color: #ff8800;
+  color: #fff;
+}
 
+.tab-2-content-inner .upper-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+} 
 
+.tab-2-content-inner .title {
+  padding-left: 10px;
+}
+
+.tab-2-content-inner .question-item { 
+  padding-bottom: 30px;
+  overflow: hidden;
+}

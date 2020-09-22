@@ -1,7 +1,6 @@
-class Article < ApplicationRecord
+class Question < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :country
   belongs_to_active_hash :category
-  belongs_to :user
-  has_one_attached :image
+  belongs_to_active_hash :status
 end
