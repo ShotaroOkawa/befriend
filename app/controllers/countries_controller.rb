@@ -1,6 +1,5 @@
 class CountriesController < ApplicationController
   def index
-    @articles = Article.all
     @asia_countries = Country.find_all_by_region "Asia"
     @europe_countries = Country.find_all_by_region "Europe"
     @north_america_countries = Country.find_all_by_region "North America"
@@ -12,7 +11,8 @@ class CountriesController < ApplicationController
   end
 
   def show
-    @article = Article.find_by_country_id(params[:id])
+    @articles = Article.where(country_id: params[:id])
+    @country = Country.find(params[:id])
   end
 
 end

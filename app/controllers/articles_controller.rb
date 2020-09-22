@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   def index
     @articles = Article.all
+    @europe_countries = Country.find_all_by_region "Europe"
   end
 
   def new

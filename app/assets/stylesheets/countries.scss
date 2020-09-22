@@ -27,6 +27,27 @@ ul {
   list-style-type: none;
 }
 
+// ボタン
+.btn {
+  display: inline-block;
+  background: orange;
+  color: #fff;
+  font-size: 1rem;
+  font-size: 1rem;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  padding: 10px 25px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.45);
+  border-radius: 2px;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+// トップページ
+
 // ショーケース
 .showcase {
   position: relative;
@@ -60,7 +81,7 @@ ul {
   text-shadow: 1px 1px 0 #666;
 }
 
-// 国別
+// 国選択
 
 .country-list {
   position: relative;
@@ -151,3 +172,101 @@ ul {
 .country-list .country li a:hover {
   opacity: 0.7;
 }
+
+// 国別ページ
+
+//  ショーケース
+.country-showcase {
+  height: 50vh;
+  background: #fc9003;
+}
+.country-showcase .showcase-content {
+  padding-top: 10rem;
+}
+
+// タブ
+.tabs {
+  position: relative;
+  background: #fff;
+  padding-top: 1rem;
+  border-bottom: 1px solid #666666; 
+}
+
+.tabs .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.tabs p {
+  padding-top: 0.5rem;
+  font-size: 1.5rm;
+  color: #666666;
+}
+
+.tabs .container div {
+  padding: 1.5rem 0;
+  color: #666666;
+}
+
+.tabs .container div:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.tab-border {
+  border-bottom: #fc9003 solid 4px;
+}
+
+
+// タブをJSで動かす
+#tab-1-content, #tab-2-content, #tab-3-content {
+  display: none;
+}
+
+.show {
+  display: block !important;
+}
+
+
+// 最新の投稿
+
+.tab-content .article-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.tab-content .article-item {
+  padding-bottom: 30px;
+}
+
+.tab-content div {
+  color: #666666;
+}
+
+.tab-content img {
+  width: 300px;
+  height: 200px;
+}
+
+.tab-1-content-inner {
+  padding: 48px 16px;
+}
+
+.article-list .title{
+  width: 300px;
+  height: 36px;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+
+
+

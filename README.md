@@ -66,7 +66,7 @@
 - belongs_to :question
 
 
-## events テーブル
+## communities テーブル
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
 | title         | string     | null: false                    |
