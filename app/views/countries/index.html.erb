@@ -1,0 +1,137 @@
+<%= render "shared/header"%>
+
+<section class="showcase">
+  <div class="showcase-content">
+    <h1>Make Friends All Over The World</h1>
+    <p>Connect wherever you want</p>
+  </div>
+</section>
+
+<section class="country-list">
+  <h2>Choose country</h2>
+  <div class="wrapper-top">
+    <div class="wrapper-inner">
+      <div class="region asia">
+        <p class="region-name">Asia</p>
+      </div>
+      <div class="country">
+        <ul class="country-item">
+          <% @asia_countries.each do |asia_country| %>
+            <li>
+              <%= link_to country_path(asia_country.id) do %>
+              <%= asia_country.name %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="wrapper-inner">
+      <div class="region europe">
+        <p class="region-name">Europe</p>
+      </div>
+      <div class="country">
+        <ul class="country-item">
+          <% @europe_countries.each do |europe_country| %>
+            <li>
+              <%= link_to country_path(europe_country.id) do %>
+              <%= europe_country.name %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="wrapper-inner">
+      <div class="region north-america">
+        <p class="region-name">North America</p>
+      </div>
+      <div class="country">
+        <ul class="country-item">
+          <% @north_america_countries.each do |north_america_country| %>
+            <li>
+              <%= north_america_country.name %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="wrapper-inner">
+      <div class="region south-america">
+        <p class="region-name">South America</p>
+      </div>
+      <div class="country">
+        <ul class="country-item">
+          <% @south_america_countries.each do |south_america_country| %>
+            <li>
+              <%= south_america_country.name %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper-bottom">
+    <div class="wrapper-inner">
+      <div class="region central-america">
+        <p class="region-name">Central America</p>
+      </div>
+      <div class="country">
+        <ul class="country-item">
+          <% @central_america_countries.each do |central_america_country| %>
+            <li>
+              <%= central_america_country.name %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="wrapper-inner">
+      <div class="region oceania">
+        <p class="region-name">Oceania</p>
+      </div>
+      <div class="country">
+        <ul class="country-item">
+          <% @oceania_countries.each do |oceania_country| %>
+            <li>
+              <%= oceania_country.name %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="wrapper-inner">
+      <div class="region africa">
+        <p class="region-name">Africa</p>
+      </div>
+      <div class="country">
+        <ul class="country-item">
+          <% @africa_countries.each do |africa_country| %>
+            <li>
+              <%= link_to country_path(africa_country.id) do %>
+              <%= africa_country.name %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="wrapper-inner">
+      <div class="region middle-east">
+        <p class="region-name">Middle East</p>
+      </div>
+      <div class="country">
+        <ul class="country-item">
+          <% @middle_east_countries.each do |middle_east_country| %>
+            <li>
+              <%= middle_east_country.name %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+</footer>

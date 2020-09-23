@@ -1,0 +1,7 @@
+<%= form_with model:@answer, url: question_answers_path, local: true do |f| %>
+
+<label>answer</label>
+<div><%= f.text_field :text %></div>
+<div><%= f.submit "Post" %></div>
+
+<% end %>

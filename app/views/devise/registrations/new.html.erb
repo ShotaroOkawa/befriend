@@ -1,8 +1,4 @@
-<header>
-  <div class="container">
-    <a href="#">Befriend</a>
-  </div>
-</header>
+<h2>Sign up</h2>
 
 <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
   <label>Name</label>
@@ -24,7 +20,7 @@
   <div>
   <label>Gender</label>
   <div>
-    <%= f.number_field :gender_id %>
+    <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {}) %>
   <div>
   <label>City</label>
   <div>

@@ -1,0 +1,14 @@
+<%= render "shared/header"%>
+
+<%= image_tag @article.image %>
+<%= @article.title %>
+<%= @article.category.name %>
+<%= @article.country.name %>
+<%= @article.description %>
+
+<div>
+  <%= link_to "Edit article", edit_article_path(@article) %>
+</div>
+<div>
+  <%= link_to "Delete article", article_path(@article), method: :delete %>
+</div>

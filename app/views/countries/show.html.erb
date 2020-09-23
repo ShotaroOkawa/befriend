@@ -1,0 +1,92 @@
+<%= render "shared/header"%>
+
+<section class="showcase country-showcase">
+  <div class="showcase-content">
+    <h1><%= @country.name %></h1>
+  </div>
+</section>
+
+<section class="tabs">
+  <div class="container">
+    <div id="tab-1" class="tab-item tab-border">
+      <%= fa_icon "globe 5x" %>
+      <p>Article</p>
+    </div>
+    <div id="tab-2" class="tab-item">
+      <%= fa_icon "users 5x" %>
+      <p>Q&A</p>
+    </div>
+    <div id="tab-3" class="tab-item">
+      <%= fa_icon "globe 5x" %>
+      <p>Event</p>
+    </div>
+  </div>
+</section>
+
+<section class="tab-content">
+  <div class="container">
+    <!-- Tab Content 1 -->
+    <div id="tab-1-content" class="tab-content-item show">
+      <div class="tab-1-content-inner">
+        <div class="latest-article">
+          <%= link_to "Make new article", new_article_path, class: "btn" %> <%# マイページに移動する %>
+          <h2>Latest Articles</h2>
+          <ul class="article-list">
+          <% @articles.each do |article| %>
+            <li class="article-item">
+              <%= link_to article_path(article.id) do %>
+                <div class="image"><%= image_tag article.image %></div>
+                <div class="title"><%= article.title %></div>
+              <% end %>
+            </li>
+          <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>  
+    <!-- Tab Content 2 -->
+    <div id="tab-2-content" class="tab-content-item">
+      <div class="tab-2-content-inner">
+        <div class="latest-article">
+          <%= link_to "Make new question", new_question_path, class: "btn" %> <%# マイページに移動する %>
+          <h2>Latest questions</h2>
+          <ul class="question-list">
+          <% @questions.each do |question| %>
+            <li class="question-item">
+              <%= link_to question_path(question.id) do %>
+                <div class="upper-container">
+                  <div class="status"><%= question.status.name %></div>
+                  <div class="title"><%= question.title %></div>
+                </div>
+                <div class="text"><%= question.text %></div>
+              <% end %>
+            </li>
+          <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>  
+
+    <!-- Tab Content 3 -->
+    <div id="tab-3-content" class="tab-content-item">
+      <div class="tab-3-content-inner">
+        <div class="latest-events">
+          <%= link_to "Make new event", new_event_path, class: "btn" %> <%# マイページに移動する %>
+          <h2>Latest events</h2>
+          <ul class="event-list">
+          <% @events.each do |event| %>
+            <li class="event-item">
+              <%= link_to event_path(event.id) do %>
+                <div class="image"><%= image_tag event.image %></div>
+                <div class="title"><%= event.title %></div>
+              <% end %>
+            </li>
+          <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>  
+</section>
+
+<footer>
+</footer>
