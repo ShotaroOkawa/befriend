@@ -5,5 +5,9 @@ Rails.application.routes.draw do
   resources :questions do
     resources :answers, only: [:new, :create]
   end
+  resources :events do
+    resources :user_events, only: :create
+  end
+  resources :user, only: :show
   root to: 'countries#index'
 end

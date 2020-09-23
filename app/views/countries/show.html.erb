@@ -49,7 +49,7 @@
       <div class="tab-2-content-inner">
         <div class="latest-article">
           <%= link_to "Make new question", new_question_path, class: "btn" %> <%# マイページに移動する %>
-          <h2>Latest Articles</h2>
+          <h2>Latest questions</h2>
           <ul class="question-list">
           <% @questions.each do |question| %>
             <li class="question-item">
@@ -69,15 +69,23 @@
 
     <!-- Tab Content 3 -->
     <div id="tab-3-content" class="tab-content-item">
-      <div class="text-center">
-        <h1 class="text-lg">aaaaa</h1>
-        <p class="text-lg">
-        Test.Test.Test.Test.Test.Test.Test.Test.Test.Test.Test.Test.Test.Test.Test.Test.Test.Test.Test.Test.Test.Test.Test.Test.Test.Test.Test.Test.Test.Test.Test.Test.Test.Test.Test.Test.
-        </p>
-        <a href="#" class="btn btn-lg"></a>
+      <div class="tab-3-content-inner">
+        <div class="latest-events">
+          <%= link_to "Make new event", new_event_path, class: "btn" %> <%# マイページに移動する %>
+          <h2>Latest events</h2>
+          <ul class="event-list">
+          <% @events.each do |event| %>
+            <li class="event-item">
+              <%= link_to event_path(event.id) do %>
+                <div class="image"><%= image_tag event.image %></div>
+                <div class="title"><%= event.title %></div>
+              <% end %>
+            </li>
+          <% end %>
+          </ul>
+        </div>
       </div>
-    </div>
-  </div>
+    </div>  
 </section>
 
 <footer>

@@ -55,6 +55,9 @@ ul {
   width: 100%;
   height: 85vh;
   background: url('nepal.JPG') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .showcase-content {
@@ -64,7 +67,7 @@ ul {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding-top: 15rem;
+  top: -100px;
 }
 
 .showcase-content h1 {
@@ -94,8 +97,8 @@ ul {
   font-size: 2rem;
   text-shadow: 1px 1px 0 #666;
   text-align: center;
-  line-height: 200px;
 }
+
 .country-list ul {
   margin: 0;
   padding: 0;
@@ -110,33 +113,36 @@ ul {
   width: 23%;
 }
 
+.country-list .region {
+  border-radius: 2rem;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .country-list .asia {
   background: url('asia.jpg') no-repeat center center/cover;
-  border-radius: 2rem;
 }
+
 .country-list .europe {
   background: url('europe.jpg') no-repeat center center/cover;
-  border-radius: 2rem;
 }
 
 .country-list .north-america {
   background: url('north-america.jpg') no-repeat center center/cover;
-  border-radius: 2rem;
 }
 
 .country-list .south-america {
   background: url('south-america.jpg') no-repeat center center/cover;
-  border-radius: 2rem;
 }
 
 .country-list .central-america {
   background: url('central-america.jpg') no-repeat center center/cover;
-  border-radius: 2rem;
 }
 
 .country-list .oceania {
   background: url('oceania.jpg') no-repeat center center/cover;
-  border-radius: 2rem;
 }
 
 .country-list .africa {
@@ -146,7 +152,6 @@ ul {
 
 .country-list .middle-east {
   background: url('middle-east.jpg') no-repeat center center/cover;
-  border-radius: 2rem;
 }
 
 .country-list .country-item {
@@ -251,7 +256,7 @@ ul {
 
 .tab-1-content-inner .article-list {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
@@ -293,5 +298,30 @@ ul {
 
 .tab-2-content-inner .question-item { 
   padding-bottom: 30px;
+  overflow: hidden;
+}
+
+// タブの中身3
+
+.tab-3-content-inner .event-list {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+.tab-3-content-inner .event-item {
+  padding-bottom: 30px;
+  padding-right: 30px;
+}
+
+.tab-3-content-inner img {
+  width: 300px;
+  height: 200px;
+}
+
+.tab-3-content-inner .title{
+  width: 300px;
+  height: 36px;
+  word-wrap: break-word;
   overflow: hidden;
 }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_22_033940) do
+ActiveRecord::Schema.define(version: 2020_09_22_073928) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -54,6 +54,17 @@ ActiveRecord::Schema.define(version: 2020_09_22_033940) do
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
+  create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.integer "country_id", null: false
+    t.integer "category_id", null: false
+    t.datetime "date", null: false
+    t.string "place", null: false
+    t.string "description", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.integer "country_id", null: false
@@ -64,6 +75,15 @@ ActiveRecord::Schema.define(version: 2020_09_22_033940) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_questions_on_user_id"
+  end
+
+  create_table "user_events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "event_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_user_events_on_event_id"
+    t.index ["user_id"], name: "index_user_events_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -88,4 +108,6 @@ ActiveRecord::Schema.define(version: 2020_09_22_033940) do
   add_foreign_key "answers", "users"
   add_foreign_key "articles", "users"
   add_foreign_key "questions", "users"
+  add_foreign_key "user_events", "events"
+  add_foreign_key "user_events", "users"
 end
