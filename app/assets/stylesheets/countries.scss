@@ -179,6 +179,7 @@ ul {
   opacity: 0.7;
 }
 
+
 // 国別ページ
 
 //  ショーケース
@@ -193,9 +194,14 @@ ul {
 // タブ
 .tabs {
   position: relative;
-  background: #fff;
+  background: #f0f3f7;
   padding-top: 1rem;
-  border-bottom: 1px solid #666666; 
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.25);
+}
+
+.tabs .icon {
+  font-size: 3rem;
+  padding: 10px; 
 }
 
 .tabs .container {
@@ -241,6 +247,10 @@ ul {
 
 
 // タブの中身
+
+// .tab-content {
+//   background-color: #f0f3f7;
+// }
 
 .tab-1-content-inner, .tab-2-content-inner, .tab-3-content-inner, .tab-4-content-inner, .tab-5-content-inner {
   padding: 48px 16px;
