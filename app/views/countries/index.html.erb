@@ -18,7 +18,7 @@
         <ul class="country-item">
           <% @asia_countries.each do |asia_country| %>
             <li>
-              <%= link_to country_path(asia_country.id) do %>
+              <%= link_to country_path(asia_country.id), data: {"turbolinks" => false}  do %>
               <%= asia_country.name %>
               <% end %>
             </li>
@@ -34,9 +34,7 @@
         <ul class="country-item">
           <% @europe_countries.each do |europe_country| %>
             <li>
-              <%= link_to country_path(europe_country.id) do %>
               <%= europe_country.name %>
-              <% end %>
             </li>
           <% end %>
         </ul>
@@ -108,9 +106,7 @@
         <ul class="country-item">
           <% @africa_countries.each do |africa_country| %>
             <li>
-              <%= link_to country_path(africa_country.id) do %>
               <%= africa_country.name %>
-              <% end %>
             </li>
           <% end %>
         </ul>

@@ -1,9 +1,10 @@
+<%= render "shared/header"%>
 
-
-<h1>Account Page</h1>
-<section class="profile">
-  <div><%= image_tag @user.image, class: "image" %><div>
-  <p class="name"><%= @user.first_name + " " + @user.last_name %></p>
+<section class="user-top">
+  <div class="top-image">
+    <div><%= image_tag @user.image, class: "image" %><div>
+    <p class="name"><%= @user.first_name + " " + @user.last_name %></p>
+  </div>
 </section>
 
 <section class="user-tabs">
@@ -24,7 +25,7 @@
       <%= icon('fas', 'flag') %>
       <p>My Profile</p>
     </div>
-    <div id="tab-4" class="tab-item">
+    <div id="tab-5" class="tab-item">
       <%= icon('fas', 'flag') %>
       <p>My Friends</p>
     </div>
@@ -40,14 +41,14 @@
           <%= link_to "Make new article", new_article_path, class: "btn" %> 
           <h2>Latest Articles</h2>
           <ul class="article-list">
-          <% @articles.each do |article| %>
-            <li class="article-item">
-              <%= link_to article_path(article.id) do %>
-                <div class="image"><%= image_tag article.image %></div>
-                <div class="title"><%= article.title %></div>
-              <% end %>
-            </li>
-          <% end %>
+            <% @articles.each do |article| %>
+              <li class="article-item">
+                <%= link_to article_path(article.id) do %>
+                  <div class="image"><%= image_tag article.image %></div>
+                  <div class="title"><%= article.title %></div>
+                <% end %>
+              </li>
+            <% end %>
           </ul>
         </div>
       </div>
@@ -59,17 +60,17 @@
           <%= link_to "Make new question", new_question_path, class: "btn" %> 
           <h2>Latest questions</h2>
           <ul class="question-list">
-          <% @questions.each do |question| %>
-            <li class="question-item">
-              <%= link_to question_path(question.id) do %>
-                <div class="upper-container">
-                  <div class="status"><%= question.status.name %></div>
-                  <div class="title"><%= question.title %></div>
-                </div>
-                <div class="text"><%= question.text %></div>
-              <% end %>
-            </li>
-          <% end %>
+            <% @questions.each do |question| %>
+              <li class="question-item">
+                <%= link_to question_path(question.id) do %>
+                  <div class="upper-container">
+                    <div class="status"><%= question.status.name %></div>
+                    <div class="title"><%= question.title %></div>
+                  </div>
+                  <div class="text"><%= question.text %></div>
+                <% end %>
+              </li>
+            <% end %>
           </ul>
         </div>
       </div>
@@ -91,6 +92,25 @@
             </li>
           <% end %>
           </ul>
+        </div>
+      </div>
+    </div> 
+    <!-- Tab Content 4 -->
+    <div id="tab-4-content" class="tab-content-item">
+      <div class="tab-4-content-inner">
+        <div class="profile">
+          <h2>My Profile</h2>
+          <%= @user.gender.name %>
+          <%= @user.city %>
+          <%= @user.birthday %>
+        </div>
+      </div>
+    </div> 
+    <!-- Tab Content 5 -->
+    <div id="tab-5-content" class="tab-content-item">
+      <div class="tab-5-content-inner">
+        <div>
+          <h2>My friends</h2>
         </div>
       </div>
     </div> 
