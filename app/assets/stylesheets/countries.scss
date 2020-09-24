@@ -46,6 +46,7 @@ ul {
   opacity: 0.9;
 }
 
+
 // トップページ
 
 // ショーケース
@@ -230,7 +231,7 @@ ul {
 
 
 // タブをJSで動かす
-#tab-1-content, #tab-2-content, #tab-3-content {
+#tab-1-content, #tab-2-content, #tab-3-content, #tab-4-content, #tab-5-content {
   display: none;
 }
 
@@ -241,7 +242,7 @@ ul {
 
 // タブの中身
 
-.tab-1-content-inner, .tab-2-content-inner, .tab-3-content-inner {
+.tab-1-content-inner, .tab-2-content-inner, .tab-3-content-inner, .tab-4-content-inner, .tab-5-content-inner {
   padding: 48px 16px;
 }
 
@@ -325,3 +326,6 @@ ul {
   word-wrap: break-word;
   overflow: hidden;
 }
+
+
+

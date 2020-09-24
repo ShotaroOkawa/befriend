@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   resources :events do
     resources :user_events, only: :create
   end
-  resources :user, only: :show
+  resources :users, only: :show
   root to: 'countries#index'
 end
