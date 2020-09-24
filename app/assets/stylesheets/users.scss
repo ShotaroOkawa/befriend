@@ -1,3 +1,47 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile .image {
+  width: 300px;
+  height:300px;
+  border-radius: 50%;
+}
+
+.profile .name {
+  font-size: 2rem;
+  color: #666666;
+  text-align: center;
+}
+
+.user-tabs {
+  position: relative;
+  background: #fff;
+  padding-top: 1rem;
+  border-bottom: 1px solid #666666; 
+}
+
+.user-tabs .container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.user-tabs p {
+  padding-top: 0.5rem;
+  font-size: 1.5rm;
+  color: #666666;
+}
+
+.user-tabs .container div {
+  padding: 1.5rem 0;
+  color: #666666;
+}

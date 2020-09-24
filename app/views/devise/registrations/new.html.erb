@@ -38,6 +38,8 @@
             end_year: (Time.now.year - 5),
             date_separator: '%s'),
           "<p> year </p>", "<p> month </p>") + "<p> day </p>" %>
+  <label>Image</label>
+  <div><%= f.file_field :image %></div>
   <div class='register-btn'>
     <%= f.submit "register" %>
   </div>
