@@ -267,22 +267,26 @@ ul {
 
 .tab-1-content-inner .article-list {
   display: flex;
-  justify-content: space-around;
+  justify-content: start;
   flex-wrap: wrap;
 }
 
 .tab-1-content-inner .article-item {
   padding-bottom: 30px;
+  padding-right: 30px;
 }
 
 .tab-1-content-inner img {
   width: 300px;
   height: 200px;
+  object-fit: cover;
 }
 
 .tab-1-content-inner .title{
   width: 300px;
-  height: 36px;
+  height: 100px;
+  padding-top: 5px; 
+  font-size: 1.2rem;
   word-wrap: break-word;
   overflow: hidden;
 }
@@ -328,6 +332,7 @@ ul {
 .tab-3-content-inner img {
   width: 300px;
   height: 200px;
+  object-fit: cover;
 }
 
 .tab-3-content-inner .title{

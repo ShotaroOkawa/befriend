@@ -31,7 +31,7 @@ class Country < ActiveHash::Base
     { id: 29, region: 'Middle East', name: 'Israel' },
     { id: 30, region: 'Europe', name: 'Italy' },
     { id: 31, region: 'Central America', name: 'Jamaica' },
-    { id: 32, region: 'Asia', name: 'Japan' },
+    { id: 32, region: 'Asia', name: 'Japan', image: File.open('/Users/shotaro/work/techcamp/projects/befriend/app/assets/images/europe.jpg') },
     { id: 33,  region: 'Africa', name: 'Kenya' },
     { id: 34, region: 'Asia', name: 'Korea' },
     { id: 35, region: 'Asia', name: 'Malaysia' },

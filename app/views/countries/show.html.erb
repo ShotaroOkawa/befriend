@@ -3,6 +3,7 @@
 <section class="showcase country-showcase">
   <div class="showcase-content">
     <h1><%= @country.name %></h1>
+    <%= image_tag @country.image %>
   </div>
 </section>
 
@@ -29,7 +30,6 @@
     <div id="tab-1-content" class="tab-content-item show">
       <div class="tab-1-content-inner">
         <div class="latest-article">
-          <%= link_to "Make new article", new_article_path, class: "btn" %> <%# マイページに移動する %>
           <h2>Latest Articles</h2>
           <ul class="article-list">
           <% @articles.each do |article| %>
@@ -48,7 +48,6 @@
     <div id="tab-2-content" class="tab-content-item">
       <div class="tab-2-content-inner">
         <div class="latest-article">
-          <%= link_to "Make new question", new_question_path, class: "btn" %> <%# マイページに移動する %>
           <h2>Latest questions</h2>
           <ul class="question-list">
           <% @questions.each do |question| %>
@@ -71,7 +70,6 @@
     <div id="tab-3-content" class="tab-content-item">
       <div class="tab-3-content-inner">
         <div class="latest-events">
-          <%= link_to "Make new event", new_event_path, class: "btn" %> <%# マイページに移動する %>
           <h2>Latest events</h2>
           <ul class="event-list">
           <% @events.each do |event| %>

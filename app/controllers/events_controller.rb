@@ -7,7 +7,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     if @event.valid?
       @event.save
-      redirect_to root_path
+     redirect_to user_path(current_user.id)
     else
       render :new
     end
@@ -24,7 +24,7 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     if @event.update(event_params)
-      redirect_to root_path
+     redirect_to user_path(current_user.id)
     else
       render :edit
     end
@@ -33,7 +33,7 @@ class EventsController < ApplicationController
   def destroy
     @event = Event.find(params[:id])
     if @event.destroy
-      redirect_to root_path
+     redirect_to user_path(current_user.id)
     else
       render :show
     end

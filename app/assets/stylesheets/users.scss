@@ -17,9 +17,10 @@
 
 .top-image .image {
   width: 300px;
-  height:300px;
+  height: 300px;
   border-radius: 50%;
   margin-top: 2rem;
+  object-fit: cover;
 }
 
 .top-image .name {

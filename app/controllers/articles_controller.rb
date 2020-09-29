@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     if @article.valid?
       @article.save
-      redirect_to root_path
+      redirect_to user_path(current_user.id)
     else
       render :new
     end
@@ -24,7 +24,7 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
     if @article.update(article_params)
-      redirect_to root_path
+     redirect_to user_path(current_user.id)
     else
       render :edit
     end
@@ -33,7 +33,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     if @article.destroy
-      redirect_to root_path
+     redirect_to user_path(current_user.id)
     else
       render :show
     end

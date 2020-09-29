@@ -14,29 +14,16 @@
 - 日本のアニメ文化に興味があるので、日本人と話がしたい。
 # 洗い出した要件
 - 国リストページ
-- 記事一覧表示機能
-- 記事投稿機能
-- 記事詳細表示機能
-- 記事編集機能
-- 記事削除機能
-- Q&A一覧表示機能
-- Q&A投稿機能
-- Q&A詳細表示機能
-- Q&A編集機能
-- Q&A削除機能
-- イベント一覧表示機能
-- イベント投稿機能
-- イベント詳細表示機能
-- イベント編集機能
-- イベント削除機能
+- 記事管理機能（一覧表示、新規投稿、詳細表示、編集、削除）
+- コメント管理機能（一覧表示、新規投稿、編集、削除）
+- Q&A管理機能（一覧表示、新規投稿、詳細表示、編集、削除）
+- アンサー管理機能（一覧表示、新規投稿、編集、削除）
+- イベント管理機能（一覧表示、新規投稿、詳細表示、編集、削除）
 - イベント参加機能
-- ユーザー新規登録機能
-- ユーザーログイン機能
-- ユーザーログアウト機能
-- マイページ機能
+- ユーザー管理機能（新規登録、ログイン、ログアウト、マイページ）
 - カテゴリー別表示機能
-- グッドボタン機能
 - 人気順表示機能
+- グッドボタン機能
 - 検索機能
 - 記事に対するコメント機能
 - 友達機能
@@ -49,24 +36,27 @@
 ## ER図 https://gyazo.com/4b3f9bb3adca1da7be8a923202ba43fe
 ## users テーブル
 
-| Column           | Type    | Options      |
-| ---------------- | ------- | ------------ |
-| first_name       | string  | null: false  |
-| last_name        | string  | null: false  |
-| email            | string  | null: false  |
-| password         | string  | null: false  |
-| gender_id        | integer | null: false  | <!-- active record -->
-| city             | string  | null: false  |
-| birthday         | date    | null: false  |
-| language         | string  |              |
+| Column           | Type       | Options                         |
+| ---------------- | -------    | ------------------------------- |
+| country          | references | null: false, foreign_key: true  |
+| nickname         | string     | null: false                     |
+| email            | string     | null: false                     |
+| password         | string     | null: false                     |
+| gender_id        | integer    | null: false  *Active Hash       | 
+| city             | string     | null: false                     |
+| birthday         | date       | null: false                     |
+| language         | string     |                                 |
+| image            | -          | *Active Storage                 |
 
 ### Association
 
 - has_many :articles
+- has_many :comments
 - has_many :questions
 - has_many :answers
 - has_many :events, through: :user_events
 - has_many :user_events
+- has_one :country
 
 
 ## articles テーブル
@@ -74,23 +64,40 @@
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
 | user          | references | null: false, foreign_key: true |
-| country_id    | integer    | null: false                    |
+| country       | references | null: false, foreign_key: true |
 | category_id   | string     | null: false                    |
 | title         | string     | null: false                    |
-| description   | string     | null: false                    |
-| image         | -          | Active Storage                 |
+| content       | string     | null: false                    |
+| image         | -          | *Active Storage                |
 
 ### Association
 
 - belongs_to :user
+- has_many :comments
+- has_one :country
+
+## comments テーブル
+
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| user          | references | null: false, foreign_key: true |
+| article       | references | null: false, foreign_key: true |
+| comment       | string     | null: false                    |
+
+### Association
+
+- belongs_to :user
+- belongs_to :article
+
 
 ## questions テーブル
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
 | user          | references | null: false, foreign_key: true |
-| country_id    | integer    | null: false                    |
+| country       | references | null: false, foreign_key: true |
 | category_id   | integer    | null: false                    |
+| status_id     | integer    | null: false                    |
 | title         | string     | null: false                    |
 | text          | string     | null: false                    |
 
@@ -98,6 +105,7 @@
 
 - belongs_to :user
 - has_many :answers
+- has_one :country
 
 ## answers テーブル
 
@@ -105,7 +113,7 @@
 | ------------- | ---------- | ------------------------------ |
 | user          | references | null: false, foreign_key: true |
 | question      | references | null: false, foreign_key: true |
-| text          | string     | null: false                    |
+| content       | string     | null: false                    |
 
 ### Association
 
@@ -116,19 +124,20 @@
 ## events テーブル
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
+| country       | references | null: false, foreign_key: true |
 | title         | string     | null: false                    |
-| country_id    | string     | null: false                    |
 | category_id   | string     | null: false                    |
-| description   | string     | null: false                    |
-| date          | datetime   | null: false                    |
+| start_time    | datetime   | null: false                    |
+| end_time      | datetime   | null: false                    |
 | place         | string     | null: false                    |
-| description   | string     | null: false                    |
+| content       | string     | null: false                    |
 | image         | -          | Active Storage                 |
 
 ### Association
 
 - has_many :users, through: :user_events
 - has_many :user_events
+- has_one :country
 
 ## user_events テーブル
 | Column        | Type       | Options                        |
@@ -139,6 +148,20 @@
 ### Association
 
 - belongs_to :user
+- belongs_to :event
+
+## countries テーブル
+| Column        | Type       | Options        |
+| ------------- | ---------- | -------------- |
+| region        | string     | null: false    |
+| name          | string     | null: false    |
+| image         | -          | Active Storage |
+
+### Association
+
+- belongs_to :user
+- belongs_to :article
+- belongs_to :question
 - belongs_to :event
 
 # ローカルでの動作方法
